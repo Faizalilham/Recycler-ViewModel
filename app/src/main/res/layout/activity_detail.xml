@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/detailNewsImage"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:iss_auto_cycle="true"
+            app:iss_period="3000"
+            app:iss_delay="0"
+            android:animateLayoutChanges="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDetailNewsTittle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/tittle"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp18"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailNewsImage" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            android:id="@+id/tvDetailNewsContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/tittle"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:animDuration="200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailNewsTittle"
+            app:maxCollapsedLines="4">
+
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"
+                android:padding="16dp" />
+
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <TextView
+            android:id="@+id/tvDetailNewsJurnalist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/tittle"
+            android:layout_marginBottom="@dimen/dp10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailNewsContent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailNewsContent"
+            app:layout_constraintStart_toEndOf="@id/tvDetailNewsJurnalist"/>
+
+        <TextView
+            android:id="@+id/tvDetailNewsDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="@string/tittle"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toEndOf="@id/view"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailNewsContent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
